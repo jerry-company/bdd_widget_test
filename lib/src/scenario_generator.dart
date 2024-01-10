@@ -16,6 +16,7 @@ void parseScenario(
   sb.writeln(
     "    $testMethodName('''$scenarioTitle''', ($testerName) async {",
   );
+  sb.writeln('      await withClock(tester.binding.clock, () async {');
   if (hasTearDown) {
     sb.writeln('      try {');
   }
@@ -44,6 +45,7 @@ void parseScenario(
       '     );',
     );
   }
+  sb.writeln('      });');
 }
 
 List<List<BddLine>> generateScenariosFromScenaioOutline(

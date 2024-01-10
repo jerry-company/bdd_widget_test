@@ -48,6 +48,7 @@ String generateFeatureDart(
   if (tags.isNotEmpty) {
     sb.writeln("@Tags(['${tags.join("', '")}'])");
   }
+  sb.writeln("import 'package:clock/clock.dart';");
   sb.writeln("import 'package:flutter/material.dart';");
   sb.writeln("import 'package:flutter_test/flutter_test.dart';");
   if (isIntegrationTest) {
